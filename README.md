@@ -92,8 +92,8 @@ I kept the code simple and readable. Each file has one job.
 ## Edge cases handled
 
 - Paging: fetches pages until no more issues are left.
-- Rate limiting (HTTP 429): retries and pauses between pages reduce chance of being throttled.
+- 429/Rate-limit safety: retries and pauses between pages reduce chance of being throttled.
 - Network errors: transient failures are retried by the HTTP session configuration.
 - Missing data: transformer uses defaults so missing fields won't crash the run.
-- HTML content: HTML tags stripped and HTML entities decoded for readable text.
+- Clean text output: HTML tags stripped and HTML entities decoded for readable text.
 - Partial runs: processed issue keys are saved so a stopped run can resume.
